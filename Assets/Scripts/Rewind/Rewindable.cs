@@ -29,8 +29,6 @@ public class Rewindable : MonoBehaviour
     private static bool _isRewinding;
     private float _maxPointsInTime;
 
-    private float rewinding;
-
     private void OnEnable()
     {
         Rewinder.rew.startRewind += OnStartRewind;
@@ -91,7 +89,6 @@ public class Rewindable : MonoBehaviour
     
     private void OnStopRewind()
     {
-        rewinding = 0f;
         _rb.isKinematic = false;
         _isRewinding = false;
     }

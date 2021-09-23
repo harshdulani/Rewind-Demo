@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 110626611}
   m_Layer: 0
   m_Name: obs
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -570,6 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 250
   movementSpeed: 10
+  fxPrefab: {fileID: 1696172347195766, guid: 7eb8f523cb26ac047a04fb50bb44bdcd, type: 3}
 --- !u!114 &743434299
 MonoBehaviour:
   m_ObjectHideFlags: 0
