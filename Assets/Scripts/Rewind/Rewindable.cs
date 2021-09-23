@@ -3,16 +3,15 @@ using UnityEngine;
 
 public class PointInTime
 {
+    public static readonly PointInTime Zero = new PointInTime(Vector3.zero, Quaternion.identity);
+    
     public Vector3 Position;
     public Quaternion Rotation;
-    public float DeltaTime;
-
-    public PointInTime(Vector3 pos, Quaternion rot, float delta)
+    public PointInTime(Vector3 pos, Quaternion rot)
     {
         Position = pos;
         Rotation = rot;
         //scale = sca;
-        DeltaTime = delta;
 
         //maybe store only deltas, so you don't need to update positions on every frame if there is no change
     }
@@ -25,8 +24,12 @@ public class Rewindable : MonoBehaviour
 {
     public List<PointInTime> pointsInTime;
 
+    private Rigidbody _rb;
+    
     private static bool _isRewinding;
-    private static float _elapsedRewind; //holds total of all delta times in all points
+    private float _maxPointsInTime;
+
+    private float rewinding;
 
     private void OnEnable()
     {
@@ -43,9 +46,12 @@ public class Rewindable : MonoBehaviour
     private void Start()
     {
         pointsInTime = new List<PointInTime>();
+        _rb = GetComponent<Rigidbody>();
+        
+        _maxPointsInTime = Mathf.Round(Rewinder.rew.maxRewindTime / Time.fixedDeltaTime);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_isRewinding)
             Rewind();
@@ -55,41 +61,38 @@ public class Rewindable : MonoBehaviour
 
     private void Rewind()
     {
-        if (pointsInTime.Count == 0)
-        {
-            Rewinder.rew.InvokeStopRewind();
+        if (pointsInTime.Count > 0)
+        { 
+            var point = pointsInTime[0];
+
+            transform.position = point.Position;
+            transform.rotation = point.Rotation;
+        
+            pointsInTime.RemoveAt(0);
             return;
         }
         
-        var point = pointsInTime[0];
-        pointsInTime.RemoveAt(0);
-
-        transform.position = point.Position;
-        transform.rotation = point.Rotation;
-        _elapsedRewind -= point.DeltaTime;
+        Rewinder.rew.InvokeStopRewind();
     }
 
     private void Record()
     {
-        if (_elapsedRewind > Rewinder.rew.maxRewindTime)
-        {
-            var point = pointsInTime[pointsInTime.Count - 1];
-            _elapsedRewind -= point.DeltaTime;
-            
+        if (pointsInTime.Count > _maxPointsInTime)
             pointsInTime.RemoveAt(pointsInTime.Count - 1);
-        }
         
-        pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation, Time.deltaTime));
-        _elapsedRewind += Time.deltaTime;
+        pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
     }
 
     private void OnStartRewind()
     {
         _isRewinding = true;
+        _rb.isKinematic = true;
     }
     
     private void OnStopRewind()
     {
+        rewinding = 0f;
+        _rb.isKinematic = false;
         _isRewinding = false;
     }
 }
