@@ -41,9 +41,9 @@ public class PlayerController : MonoBehaviour
         if(Rewinder.rew.isRewinding) return;
         if(!other.gameObject.CompareTag("Obstacle")) return;
 
-        var point = other.contacts[0].point;
-        var _direction = transform.position - point;
-        var _angle = (Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg);
-        Instantiate(fxPrefab, point, Quaternion.AngleAxis(_angle, Vector3.up));
+        var point = other.transform.position + other.gameObject.transform.up * 2f;
+        var look = Quaternion.LookRotation(Vector3.up, Vector3.forward);
+        print("New ");
+        Instantiate(fxPrefab, point, look);
     }
 }

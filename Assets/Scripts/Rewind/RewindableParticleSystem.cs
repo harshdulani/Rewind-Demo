@@ -3,13 +3,11 @@ using UnityEngine;
 public class RewindableParticleSystem : MonoBehaviour
 {
 	//TODO: doesn't rewind properly if there were multiple collisions during rewind time
-	private ParticleSystem[] _particleSystems;
-	
-	public float startTime = 2.0f;
 	public float simulationSpeedScale = 1.0f;
-	
-	private float[] _simulationTimes, _currentSimulationTimes;
-	private float _lastSimTimestamp = -2f;
+
+	private ParticleSystem[] _particleSystems;
+	private float[] _simulationTimes;
+	private float _elapsedSinceStart;
 	private bool _isRewinding, _needsToResumeAfterRewind;
 
 	private void OnEnable()
@@ -21,37 +19,32 @@ public class RewindableParticleSystem : MonoBehaviour
 		if (_particleSystems == null)
 			Initialize();
  
-		for (int i = 0; i < _simulationTimes.Length; i++)
-		{
-			_simulationTimes[i] = 0.0f;
-		}
- 
 		//_particleSystems[0].Simulate(startTime, true, false, true);
 	}
 	private void OnDisable()
 	{
 		Rewinder.rew.startRewind -= OnStartRewind;
 		Rewinder.rew.stopRewind -= OnStopRewind;
-		
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		if(_isRewinding)
 			SimulateAnimation();
 		else if(_needsToResumeAfterRewind)
 			SimulateAnimation(1f);
+
+		_elapsedSinceStart += Time.fixedDeltaTime;
 	}
 	
 	private void Initialize()
 	{
 		_particleSystems = GetComponentsInChildren<ParticleSystem>(false);
-		_currentSimulationTimes = _simulationTimes = new float[_particleSystems.Length];
+		_simulationTimes = new float[_particleSystems.Length];
 		
-		_particleSystems[0].Stop(true,
-			ParticleSystemStopBehavior.StopEmittingAndClear);
+		_particleSystems[0].Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 		//setting this here, because will forget to do on all fx you add to scene
-		//causes wonky/weird artifacts if left on
+		//causes wonky/weird artifacts if left true
 		foreach (var system in _particleSystems)
 			system.useAutoRandomSeed = false;
 
@@ -61,8 +54,7 @@ public class RewindableParticleSystem : MonoBehaviour
 
 	private void SimulateAnimation(float signMultiplier = -1f)
 	{
-		_particleSystems[0].Stop(true,
-			ParticleSystemStopBehavior.StopEmittingAndClear);
+		_particleSystems[0].Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 		
 		for (int i = _particleSystems.Length - 1; i >= 0; i--)
 		{
@@ -70,11 +62,11 @@ public class RewindableParticleSystem : MonoBehaviour
 		
 			//decreasing simTime to simulate particle fx in reverse, vice versa
 			float deltaTime = _particleSystems[i].main.useUnscaledTime ? Time.fixedUnscaledDeltaTime : Time.fixedDeltaTime;
+			var x = _simulationTimes[i];
 			_simulationTimes[i] += (signMultiplier * deltaTime * _particleSystems[i].main.simulationSpeed) * simulationSpeedScale;
-			
+
 			float currentSimulationTime = _simulationTimes[i];
-			currentSimulationTime += _lastSimTimestamp < 1f ? startTime : _lastSimTimestamp;  
-			_particleSystems[i].Simulate(currentSimulationTime, false, false, true);
+			_particleSystems[i].Simulate(currentSimulationTime, false, !_isRewinding, true);
 			
 			if(signMultiplier < 0)
 			{
@@ -91,28 +83,34 @@ public class RewindableParticleSystem : MonoBehaviour
 			_particleSystems[i].Play(false);
 			_particleSystems[i].Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
 			//rig this particle fx for destruction/return to pool
-			i--;
+			Destroy(gameObject);
+			//i--;
 		}
 	}
 
 	private void OnStartRewind()
 	{
 		_isRewinding = true;
-
-		_lastSimTimestamp = _particleSystems[0].time;
+		
+		for (int i = 0; i < _particleSystems.Length; i++)
+			_simulationTimes[i] = _elapsedSinceStart;
 	}
     
 	private void OnStopRewind()
 	{
 		_isRewinding = false;
 		
-		foreach (var system in _particleSystems)
+		for (int i = 0; i < _particleSystems.Length; i++)
 		{
-			if (!system.IsAlive()) continue;
+			if (!_particleSystems[i].IsAlive())
+			{
+				_simulationTimes[i] = -2f;
+				continue;
+			}
 			
 			//only need to resume after rewind has ended, if the animation is still playing
 			_needsToResumeAfterRewind = true;
-			_lastSimTimestamp = _particleSystems[0].time;
+			_simulationTimes[i] = _particleSystems[i].time;
 		}
 	}
 }

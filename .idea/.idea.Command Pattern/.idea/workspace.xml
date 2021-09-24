@@ -12,10 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1068774c-f4de-4830-b8c4-24955ed01607" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Command Pattern/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Command Pattern/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rewind.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Rewind.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rewind/Rewindable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rewind/Rewindable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rewind/RewindableParticleSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rewind/RewindableParticleSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,10 +24,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Rewindable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CanvasController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Commands.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rewind/RewindableParticleSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Polygon Arsenal/Prefabs/Environment/Confetti.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rewind/Rewindable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rewind/Rewinder.cs" root0="FORCE_HIGHLIGHTING" />
@@ -104,7 +101,8 @@
     <MESSAGE value="Implemented Basic Rewind functionality" />
     <MESSAGE value="Implemented transform based Rewind functionality" />
     <MESSAGE value="optimised by removing delta time field" />
-    <option name="LAST_COMMIT_MESSAGE" value="optimised by removing delta time field" />
+    <MESSAGE value="Add rewindable particle effect script, needs work to run perfectly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add rewindable particle effect script, needs work to run perfectly" />
   </component>
   <component name="WindowStateProjectService">
     <state x="794" y="235" key="RiderGenerateDialog" timestamp="1631954914252">
@@ -119,10 +117,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1632387916233" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1632393830887">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1632402936850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1632393830887" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1632402936850" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1632400421047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
