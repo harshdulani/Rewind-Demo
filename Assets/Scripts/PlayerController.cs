@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
 
         var point = other.transform.position + other.gameObject.transform.up * 2f;
         var look = Quaternion.LookRotation(Vector3.up, Vector3.forward);
-        print("New ");
         Instantiate(fxPrefab, point, look);
     }
 }

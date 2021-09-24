@@ -39,6 +39,8 @@
             <e p="RewindableParticleSystem.cs" t="Include" />
             <e p="Rewinder.cs" t="Include" />
           </e>
+          <e p="XBotController.cs" t="Include" />
+          <e p="XObsController.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
