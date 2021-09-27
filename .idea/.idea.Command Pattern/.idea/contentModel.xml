@@ -36,6 +36,8 @@
           <e p="PlayerController.cs" t="Include" />
           <e p="Rewind" t="Include">
             <e p="Rewindable.cs" t="Include" />
+            <e p="RewindableHierarchy.cs" t="Include" />
+            <e p="RewindableHierarchyController.cs" t="Include" />
             <e p="RewindableParticleSystem.cs" t="Include" />
             <e p="Rewinder.cs" t="Include" />
           </e>
@@ -71,6 +73,7 @@
           </e>
           <e p="Sprites" t="Include">
             <e p="EmojiOne Attribution.txt" t="Include" />
+            <e p="EmojiOne.json" t="Include" />
           </e>
         </e>
       </e>

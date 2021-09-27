@@ -12,12 +12,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1068774c-f4de-4830-b8c4-24955ed01607" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Command Pattern/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Command Pattern/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Command Pattern/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Command Pattern/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Command Pattern/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Command Pattern/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/player 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/player 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rewind.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Rewind.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Locomotion Pack/xbot.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Meshes/Locomotion Pack/xbot.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rewind 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Rewind 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rewind/Rewindable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rewind/Rewindable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,30 +29,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///CanvasController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rewind/Rewindable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rewind/Rewinder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/XBotController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RewindableRecorder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Rewindable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rewindable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rewind/RewindableHierarchy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Polygon Arsenal/Prefabs/Environment/Confetti.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rewind/Rewindable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rewind/Rewinder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/XObsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Animator.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CanvasController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rewind/RewindableHierarchyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/XBotController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rewind/RewindableParticleSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///CanvasController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///CanvasController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -64,12 +54,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CanvasController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Rewind/Rewinder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Rewind/Rewindable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Rewind/RewindParticleSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Rewind/RewindableParticleSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/XBotController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/XObsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/XBotController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Rewind/RewindableAnimated.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Rewind/AnimatedHeirarchyRecorder.cs" />
+        <option value="$PROJECT_DIR$/Assets/RewindableRecorder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Rewind/Rewindable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Rewind/AnimatedHierarchyObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Rewind/AnimatedHierarchyRecorder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Rewind/RewindableHierarchyController.cs" />
       </list>
     </option>
   </component>
@@ -128,7 +124,8 @@
     <MESSAGE value="optimised by removing delta time field" />
     <MESSAGE value="Add rewindable particle effect script, needs work to run perfectly" />
     <MESSAGE value="particle fx perfected" />
-    <option name="LAST_COMMIT_MESSAGE" value="particle fx perfected" />
+    <MESSAGE value="set up scene for animation testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="set up scene for animation testing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="794" y="235" key="RiderGenerateDialog" timestamp="1631954914252">
@@ -143,10 +140,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1632387916233" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1632464422923">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1632473097439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1632464422923" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1632473097439" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1632465735922">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
